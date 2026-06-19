@@ -1,0 +1,100 @@
+/* Sobre Nosotros */
+#sobre-nosotros .section-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+/* Minecraft Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background: #111;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 1.2rem;
+    text-align: center;
+}
+
+/* Colaboradores */
+.collaborators-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.collaborators-list h3 {
+    font-size: 1.8rem;
+    padding: 1rem;
+    background: #1a1a1a;
+    border-radius: 12px;
+}
+
+.coming-soon {
+    color: #00ff9d;
+    font-style: italic;
+}
+
+/* Contacto (mantener igual) */
+.contact-container {
+    display: flex;
+    gap: 4rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.contact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    color: white;
+}
+
+.btn-enviar {
+    background: #c026d3;
+    color: white;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 9999px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.form-message {
+    margin-top: 1rem;
+    font-weight: 600;
+}

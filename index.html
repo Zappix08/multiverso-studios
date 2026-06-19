@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MULTIVERSO STUDIOS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.6;
+        }
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(10,10,10,0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.2rem 0;
+        }
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav-menu a:hover, .nav-menu a.active { color: #00ff9d; }
+        .linktree { color: #00ff9d; font-weight: 600; text-decoration: none; }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), 
+                        url('https://picsum.photos/1920/1080?random=55') center/cover;
+            display: flex;
+            align-items: center;
+        }
+        .hero-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        .hero h1 { font-size: 5.2rem; font-weight: 900; margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1.35rem; opacity: 0.9; margin-bottom: 3rem; }
+
+        .main-box {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            background: rgba(20,20,20,0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            max-width: 950px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .logo-box {
+            background: linear-gradient(135deg, #6b46c1, #9f7aea);
+            width: 240px; height: 200px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 16px;
+            flex-shrink: 0;
+        }
+        .saturn { font-size: 7rem; }
+        .green { color: #00ff9d; }
+        .purple { color: #c026d3; }
+
+        .ver-mas { color: #00ff9d; font-weight: 600; text-decoration: none; }
+
+        /* Secciones */
+        .content { display: none; padding: 110px 2rem 6rem; min-height: 100vh; }
+        .content.active { display: block; }
+        .section-content { max-width: 1200px; margin: 0 auto; }
+
+        h2 { font-size: 3.8rem; text-align: center; margin-bottom: 1.5rem; }
+
+        /* Sobre Nosotros */
+        #sobre-nosotros p {
+            font-size: 1.15rem;
+            max-width: 900px;
+            margin: 1.5rem auto;
+            text-align: justify;
+        }
+
+        /* PROYECTOS - Minecraft */
+        .projects-container {
+            max-width: 1100px;
+            margin: 3rem auto;
+        }
+        .project-row {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            background: #111;
+            padding: 1.8rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+        }
+        .project-image {
+            flex: 0 0 340px;
+        }
+        .project-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        .project-text h3 {
+            font-size: 1.85rem;
+            margin-bottom: 1rem;
+        }
+        .project-text p {
+            font-size: 1.1rem;
+            line-height: 1.75;
+            color: #ddd;
+        }
+
+        /* Colaboradores */
+        .collaborators-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .collaborators-list h3 {
+            font-size: 1.8rem;
+            background: #1a1a1a;
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .coming-soon { color: #00ff9d !important; }
+
+        /* Contacto */
+        .contact-container {
+            display: flex;
+            gap: 4rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .contact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #1a1a1a;
+            border: none;
+            border-radius: 8px;
+            color: white;
+        }
+        .btn-enviar {
+            background: #c026d3;
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+        }
+
+        footer { text-align: center; padding: 3rem; background: #111; margin-top: 2rem; }
+
+        @media (max-width: 900px) {
+            .project-row { flex-direction: column; }
+            .project-image { flex: none; width: 100%; }
+            .hero h1 { font-size: 3.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#" data-section="home">Inicio</a></li>
+                <li><a href="#" data-section="minecraft">Minecraft</a></li>
+                <li><a href="#" data-section="colaboradores">Colaboradores</a></li>
+                <li><a href="#" data-section="contacto">Contacto</a></li>
+            </ul>
+            <a href="https://linktr.ee/MultiStudios" target="_blank" class="linktree">Linktree*</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HOME -->
+        <section id="home" class="content active">
+            <header class="hero">
+                <div class="hero-content">
+                    <h1>MULTIVERSO STUDIOS</h1>
+                    <p class="subtitle">Studio pequeño para desarrollar eventos de Minecraft.</p>
+                    <div class="main-box">
+                        <div class="logo-box"><span class="saturn">🪐</span></div>
+                        <div class="text-content">
+                            <h2>Creamos Eventos<br><span class="green">De otro universo.</span></h2>
+                            <p>Somos un estudio pequeño creado para desarrollar eventos, series o torneos principalmente de Minecraft o de otros títulos en particular.</p>
+                            <a href="#" data-section="sobre-nosotros" class="ver-mas">Ver más sobre nosotros</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </section>
+
+        <!-- SOBRE NOSOTROS -->
+        <section id="sobre-nosotros" class="content">
+            <div class="section-content">
+                <h2>Sobre Nosotros</h2>
+                <p>Multiverso Studios fue fundada el 25 de Junio de 2023. Principalmente creada para promocionar un evento (Discord Talent), después de eso el estudio empezó un proyecto de crear eventos de Minecraft cada mes, conocido como “Los 12 eventos del año“. Proyecto que con el paso del tiempo salieron colaboraciónes con creadores pequeño. NotLeox, JoseMC, SoyPixel, Coffe Sugar Boy y ExtraYP son algunos de ellos.</p>
+                <p>El fundador, Christian Delgadillo, ya creaba eventos de diferentes títulos, como Among Us, Apex Legends y Minecraft desde 2017. Al ver que sus eventos de Minecraft obtenían éxito, decide crear un proyecto con el nombre “El multiverso“ donde creaba eventos muy sencillos para jugar con sus amigos de ese tiempo. Con el pasar de los años sale la idea junto a ExtraYP y su amigo LostBick crear un discort talent, y así da inicio a multiverso Studios.</p>
+                <p>Hoy en día, Multiverso Studio esta desarrollando un Cliente/Launcher para futuros eventos, pero con un objetivo de corto y mediano plazo, es seguir desarrollando eventos acompañado de varias personas y estudios no tan reconocidos.</p>
+            </div>
+        </section>
+
+        <!-- MINECRAFT - PROYECTOS -->
+        <section id="minecraft" class="content">
+            <div class="section-content">
+                <h2>PROYECTOS</h2>
+                <p class="description">A lo largo de los años hemos producido varios proyectos. Próximamente más eventos.</p>
+                
+                <div class="projects-container">
+
+                    <div class="project-row">
+                        <div class="project-image">
+                            <img src="imagenes/DcTalent.jpg" alt="Discord Talent">
+                        </div>
+                        <div class="project-text">
+                            <h3>Discord Talent ft. ExtraYP</h3>
+                            <p>Discord Talent fue el primer evento con el nombre de Multiverso Studios minutos después de crear el nombre del estudio. Tuvo lugar en Junio 2023 con 20 participantes.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-row">
+                        <div class="project-image">
+                            <img src="imagenes/ksmp.png" alt="KSMP">
+                        </div>
+                        <div class="project-text">
+                            <h3>KSMP</h3>
+                            <p>La 1er edición de KSMP fue una serie inspirada en TortillaLand y QSMP. Tuvo lugar en Julio 2023 con una duración de 20 días y 20 participantes.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-row">
+                        <div class="project-image">
+                            <img src="imagenes/Dextremo.png" alt="Dedsafio Extremo">
+                        </div>
+                        <div class="project-text">
+                            <h3>Dedsafio Extremo</h3>
+                            <p>Dedsafio Extremo fue una mini serie inspirada en Dedsafio y Minecraft Extremo. Tuvo lugar en 2024 con 17 participantes.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-row">
+                        <div class="project-image">
+                            <img src="imagenes/Multigames.png" alt="Multiversal Games">
+                        </div>
+                        <div class="project-text">
+                            <h3>Multiversal Games</h3>
+                            <p>Multiversal Games es evento de Minecraft inspirada en la serie de Nexflix “Squid Games“ y “Survival Cup“ de Eufonia Studios. Tuvo lugar en 2020 - 2026 con +50 participantes. Cuenta con 10 edicion (6 Oficiales y 4 especiales), la mayoría con un premio de 25 USD.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-row">
+                        <div class="project-image">
+                            <img src="imagenes/Club.png" alt="Proximamente">
+                        </div>
+                        <div class="project-text">
+                            <h3>Proximamente</h3>
+                            <p>Evento En Desarrollo</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- COLABORADORES -->
+        <section id="colaboradores" class="content">
+            <div class="section-content">
+                <h2>Nuestros <span class="green">colaboradores</span>.</h2>
+                <div class="collaborators-list">
+                    <h3>ExtraYP</h3>
+                    <h3>LostBrick</h3>
+                    <h3>CoffeSugarBoy</h3>
+                    <h3>Megan</h3>
+                    <h3>Allukfl</h3>
+                    <h3>PixelBlits</h3>
+                    <h3>NotLeox</h3>
+                    <h3>PixelTeam</h3>
+                    <h3>JoseMc</h3>
+                    <h3 class="coming-soon">Próximamente más colaboradores</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="content">
+            <div class="contact-container">
+                <div class="contact-image">
+                    <img src="imagenes/Logo.png" alt="Collage">
+                </div>
+                <div class="contact-form">
+                    <h2>Contacto</h2>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Nombre *" required>
+                        <input type="email" placeholder="Correo Electrónico *" required>
+                        <input type="text" placeholder="Asunto *" required>
+                        <textarea placeholder="Escribe tu mensaje aquí..." rows="6" required></textarea>
+                        <button type="submit" class="btn-enviar">Enviar</button>
+                    </form>
+                    <div id="form-message"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Multiverso Studios. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Navegación
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+                document.getElementById(link.getAttribute('data-section')).classList.add('active');
+            });
+        });
+
+        // Ver más sobre nosotros
+        document.querySelectorAll('.ver-mas').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+                document.getElementById('sobre-nosotros').classList.add('active');
+            });
+        });
+
+        // Formulario
+        document.getElementById('contactForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const msg = document.getElementById('form-message');
+            msg.style.color = '#ef4444';
+            msg.textContent = '❌ Error de envío. Inténtalo más tarde.';
+        });
+
+        // Animaciones
+        gsap.from("h1", { y: 80, opacity: 0, duration: 1.2 });
+    </script>
+</body>
+</html>
