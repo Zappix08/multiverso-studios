@@ -133,19 +133,51 @@
 
         /* Colaboradores */
         .collaborators-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 1.5rem;
             margin-top: 3rem;
+            padding: 0;
         }
-        .collaborators-list h3 {
+        .collaborators-list li {
+            list-style: none;
+        }
+        .collaborator-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+        .collaborator-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 16px;
+            flex-shrink: 0;
+        }
+        .collaborator-item-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .collaborator-item-content h3 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        .collaborator-item-content p {
+            margin: 0;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        .coming-soon {
+            color: #00ff9d !important;
+            margin: 0;
             font-size: 1.8rem;
-            background: #1a1a1a;
-            padding: 1.2rem;
-            border-radius: 12px;
             text-align: center;
         }
-        .coming-soon { color: #00ff9d !important; }
 
         /* Contacto */
         .contact-container {
@@ -367,24 +399,147 @@
         <section id="colaboradores" class="content">
             <div class="section-content">
                 <h2>Nuestros <span class="green">colaboradores</span>.</h2>
-                <div class="collaborators-list">
-                    <h3>ExtraYP</h3>
-                    <h3>LostBrick</h3>
-                    <h3>CoffeSugarBoy</h3>
-                    <h3>PixelBlits</h3>
-                    <h3>Allukfl</h3>
-                    <h3>Megan</h3>
-                    <h3>NotLeox</h3>
-                    <h3>Tnna</h3>
-                    <h3>JoseMc</h3>
-                    <h3>Crazy Slime</h3>
-                    <h3>Faris</h3>
-                    <h3>Darcknes Animation</h3>
-                    <h3>Marshall panda</h3>
-                    <h3>Barb</h3>
-                    <h3>Morrocoy Studios</h3>
-                    <h3 class="coming-soon">Próximamente más colaboradores</h3>
-                </div>
+                                <ul class="collaborators-list">
+                    <li class="collaborator-item">
+                        <img src="imagenes/ExtraYP.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>ExtraYP</h3>
+                            <p>Ian Jesus Studios, colaborador recurrente con el objetivo de obtener nuevas ideas para los proyectos.</p>
+                        </div>
+                    </li>
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/LostBrick.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>LostBrick</h3>
+                            <p>LostBrick, fue jues en Dicord Talent.</p>
+                        </div>
+                    </li> 
+                    
+                    <li class="collaborator-item">
+                        <img src="imagenes/IncognitoH.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>CoffeSugaBoy</h3>
+                            <p>El Co ceo de Multiverso Studios.</p>
+                        </div>
+                    </li>    
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/PixelBlits.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>PixelBlits</h3>
+                            <p>PixelBlits, anteriormente fundador y ceo de Deluxe Studios.</p>
+                        </div>
+                    </li> 
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/Allukfl.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>Allukfl</h3>
+                            <p>Nicki Nicole, Actriz de doblaje en la saga de Multiversal Games.</p>
+                        </div>
+                    </li> 
+                    
+                    <li class="collaborator-item">
+                        <img src="imagenes/IncognitoM.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>Megan</h3>
+                            <p>Megan, Actriz de doblaje en la saga de Multiversal Games.</p>
+                        </div>
+                    </li>                     
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/IncognitoH.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>Miku</h3>
+                            <p>Miku, Actor de doblaje en la saga de Multiversal Games.</p>
+                        </div>
+                    </li> 
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/Tnna.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>Tnna</h3>
+                            <p>Tania, Actriz de doblaje en la saga de Multiversal Games.</p>
+                        </div>
+                    </li> 
+                    
+                    <li class="collaborator-item">
+                        <img src="imagenes/JoseMC.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>JoseMC</h3>
+                            <p>JoseMC, Colaborador de Multiverso Studios en 2023.</p>
+                        </div>
+                    </li>                     
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/IncognitoH.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>Crazy Slime</h3>
+                            <p>Crazy Slime, Colaborador de Multiverso Studios.</p>
+                        </div>
+                    </li>     
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/IncognitoM.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>Faris</h3>
+                            <p>Faris, es la buldier para la saga de Multiversal Games.</p>
+                        </div>
+                    </li> 
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/DarknesAnimation.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>Darkness Animation</h3>
+                            <p>Darkness Animation, nuestros partners.</p>
+                        </div>
+                    </li>   
+                    
+                    <li class="collaborator-item">
+                        <img src="imagenes/MarshallPanda.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>Marshall Panda</h3>
+                            <p>Marshall Panda, fue nuestro primer programador antes de tener un nombre.</p>
+                        </div>
+                    </li>
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/IncognitoM.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>Barb</h3>
+                            <p>Barb, es la buldier para la saga de Multiversal Games.</p>
+                        </div>
+                    </li>
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/MorrocoyStudios.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>Morrocoy Studios</h3>
+                            <p>Morrocoy Studios, colaborador en el desarrollo de juegos para Multiversal Games.</p>
+                        </div>
+                    </li>
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/CalebMC.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>Caleb MC</h3>
+                            <p>Caleb MC, es uno de nuestros beta testers.</p>
+                        </div>
+                    </li>
+
+                    <li class="collaborator-item">
+                        <img src="imagenes/IncognitoH.png" alt="Club">
+                        <div class="collaborator-item-content">
+                            <h3>LimunSimon</h3>
+                            <p>Simon, es uno de nuestros beta testers.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <h3 class="coming-soon">Próximamente más colaboradores</h3>
+                    </li>
+                </ul>
             </div>
         </section>
 
