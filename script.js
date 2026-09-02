@@ -1,5 +1,5 @@
 const ROOT = document.body.dataset.root || "";
-const discord = "https://discord.gg/YUc7DqtCwV";
+const discord = "https://discord.gg/pSgQZWjNen";
 const discordBetatest = "https://discord.gg/PkDVKWqe5S";
 const twitter = "https://x.com/Multiverso_St";
 const mail =
