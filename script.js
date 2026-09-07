@@ -136,6 +136,21 @@ const projects = {
     meta: "Abril 2024 · 20 participantes",
     text: "Una serie de supervivencia de cinco días creada para ofrecer una experiencia más difícil y competitiva a sus participantes.",
   },
+  backrooms: {
+    title: "The Backrooms Recreation",
+    meta: "Septiembre 2026 · ¿? participantes",
+    text: "Evento organizado por Multiverso Studios. El cual utilizo  el mod público y gratuito desarrollado por Eufonia Studio, cuyo equipo merece todos los créditos por su creación.Estas menciones reconocen sus aportaciones y no implican colaboración, patrocinio ni aprobación de nuestro evento.",
+  },  
+  genesischamp: {
+    title: "Genesis Championship",
+    meta: "Mes Año · ¿? participantes",
+    text: "Torneo En Desarrollo.",
+  },  
+    Error404: {
+    title: "Evento Desconocido",
+    meta: "Mes Año · ¿? participantes",
+    text: "Lo sentimos, este apartado fue borrado o esta en desarrollo.",
+  },  
 };
 
 const detail = document.querySelector("#project-detail");
