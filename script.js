@@ -138,8 +138,8 @@ const projects = {
   },
   backrooms: {
     title: "The Backrooms Recreation",
-    meta: "Septiembre 2026 · ¿? participantes",
-    text: "Evento organizado por Multiverso Studios. El cual utilizo  el mod público y gratuito desarrollado por Eufonia Studio, cuyo equipo merece todos los créditos por su creación.Estas menciones reconocen sus aportaciones y no implican colaboración, patrocinio ni aprobación de nuestro evento.",
+    meta: "Septiembre 2026 · 10 participantes",
+    text: "Evento organizado por Multiverso Studios y JefferMC. El cual utilizo el mod público y gratuito desarrollado por Eufonia Studio, cuyo equipo merece todos los créditos por su creación. Estas menciones reconocen sus aportaciones y no implican colaboración, patrocinio ni aprobación de nuestro evento.",
   },  
   genesischamp: {
     title: "Genesis Championship",
