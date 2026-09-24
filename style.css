@@ -343,11 +343,26 @@ nav a:hover {
 }
 .collab-card {
   background: #18151e;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+  border: 1px solid transparent;
+}
+.collab-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(183, 144, 255, 0.55);
 }
 .collab-card img {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.collab-card:hover img {
+  transform: scale(1.035);
 }
 .collab-card div {
   padding: 15px;
@@ -359,6 +374,109 @@ nav a:hover {
   font-size: 12px;
   color: var(--muted);
   margin-top: 4px;
+}
+.collaborator-groups {
+  padding: 10px clamp(22px, 7vw, 115px) 140px;
+}
+.collaborator-group {
+  padding: 70px 0 85px;
+  border-top: 1px solid var(--line);
+}
+.collaborator-group:first-child {
+  border-top: 0;
+}
+.group-heading {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 38px;
+}
+.group-number {
+  color: var(--acid);
+  font: 600 12px "Space Grotesk";
+  letter-spacing: 0.14em;
+  padding-top: 7px;
+}
+.group-heading h2 {
+  font: 600 clamp(30px, 4vw, 52px) "Space Grotesk";
+  letter-spacing: -0.045em;
+}
+.group-heading div > p {
+  color: var(--muted);
+  margin-top: 8px;
+}
+.collaborator-group .collab-catalog {
+  padding: 0;
+}
+.collaborator-detail {
+  min-height: calc(100vh - 76px);
+  padding: 55px clamp(22px, 7vw, 115px) 120px;
+}
+.collaborator-back {
+  margin-bottom: 70px;
+}
+.profile-layout {
+  display: grid;
+  grid-template-columns: minmax(230px, 340px) minmax(0, 1fr);
+  gap: clamp(45px, 7vw, 110px);
+  align-items: center;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+.profile-media img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #18151e;
+}
+.profile-socials {
+  min-height: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 18px;
+}
+.profile-social {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #18151e;
+  border: 1px solid var(--line);
+  color: #fff;
+  text-decoration: none;
+  font: 600 17px "Space Grotesk";
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+.profile-social:hover {
+  transform: translateY(-3px);
+  background: var(--purple);
+  border-color: var(--purple);
+}
+.profile-copy .kicker {
+  color: var(--muted);
+}
+.profile-copy h1 {
+  font: 600 clamp(48px, 6vw, 86px)/0.95 "Space Grotesk";
+  letter-spacing: -0.055em;
+  margin: 20px 0 14px;
+}
+.profile-role {
+  color: var(--violet);
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+.profile-bio {
+  max-width: 760px;
+  color: #cbc6d1;
+  font-size: 18px;
+  line-height: 1.8;
 }
 .detail {
   padding: 55px clamp(22px, 7vw, 115px) 120px;
@@ -651,6 +769,13 @@ footer small {
   .split {
     grid-template-columns: 1fr;
   }
+  .profile-layout {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .profile-media {
+    max-width: 360px;
+  }
   .os-grid,
   .contact-grid {
     grid-template-columns: 1fr;
@@ -681,6 +806,22 @@ footer small {
   }
   .download {
     display: none;
+  }
+  .collaborator-groups {
+    padding-inline: 18px;
+  }
+  .group-heading {
+    grid-template-columns: 38px 1fr;
+    gap: 10px;
+  }
+  .collaborator-detail {
+    padding-inline: 20px;
+  }
+  .collaborator-back {
+    margin-bottom: 42px;
+  }
+  .profile-copy h1 {
+    font-size: 46px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

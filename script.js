@@ -111,11 +111,6 @@ const projects = {
     meta: "Julio 2026 · Supervivencia",
     text: "Una reinterpretación comunitaria del formato de supervivencia extrema. El evento reunió jugadores durante cuatro días y sirvió para probar nuevas dinámicas de producción.",
   },
-  santiago: {
-    title: "Extremo by SantiagoMC",
-    meta: "Septiembre 2026 · Colaboración",
-    text: "Evento realizado junto a SantiagoMC para su comunidad. Durante siete días los participantes avanzaron en un mundo con retos, recursos limitados y peligro constante.",
-  },
   ksmp2: {
     title: "KSMP 2",
     meta: "2024 · Serie de supervivencia",
@@ -140,17 +135,17 @@ const projects = {
     title: "The Backrooms Recreation",
     meta: "Septiembre 2026 · 10 participantes",
     text: "Evento organizado por Multiverso Studios y JefferMC. El cual utilizo el mod público y gratuito desarrollado por Eufonia Studio, cuyo equipo merece todos los créditos por su creación. Estas menciones reconocen sus aportaciones y no implican colaboración, patrocinio ni aprobación de nuestro evento.",
-  },  
+  },
   genesischamp: {
     title: "Genesis Championship",
     meta: "Mes Año · ¿? participantes",
     text: "Torneo En Desarrollo.",
-  },  
-    Error404: {
+  },
+  Error404: {
     title: "Evento Desconocido",
     meta: "Mes Año · ¿? participantes",
     text: "Lo sentimos, este apartado fue borrado o esta en desarrollo.",
-  },  
+  },
 };
 
 const detail = document.querySelector("#project-detail");
@@ -175,6 +170,289 @@ if (detail) {
       <a class="btn primary" href="contacto.html">
         Crear un proyecto con nosotros ↗
       </a>
+    </div>
+  `;
+}
+
+/*
+  PERFILES DE COLABORADORES
+
+  Para editar un perfil cambia:
+  - name: nombre visible.
+  - role: rol o cargo.
+  - group: sección a la que pertenece.
+  - image: archivo dentro de la carpeta imagenes.
+  - bio: descripción completa.
+  - socials: pega solamente las redes activas. Si el enlace está vacío,
+    el icono no aparecerá en la página.
+*/
+const collaborators = {
+  extrayp: {
+    name: "ExtraYP",
+    role: "Colaborador creativo",
+    group: "Multiverso Studios",
+    image: "ExtraYP.png",
+    bio: "ExtraYP participo en casi todos los proyectos de Multiverso Studios, aportando ideas, diseño y creatividad. Actualmente es un miembro poco activo, pero sigue siendo parte del equipo y colaborando en algunos proyectos.",
+    socials: {
+      instagram: "https://www.instagram.com/soyextraa/",
+      x: "",
+      youtube: "https://www.youtube.com/@extrayp",
+    },
+  },
+  coffee: {
+    name: "Coffee Sugar Boy",
+    role: "CEO of Darkness Animation and Co-CEO of Multiverso Studio.",
+    group: "Multiverso Studios",
+    image: "Coffeesugarboy.jpg",
+    bio: "Coffee Sugar Boy es una persona que a invertido, apoyado y colaborado tanto el como su equipo para la elaboracion de varios proyectos de Multiverso Studios. Es el CEO de Darkness Animation y Co-CEO de Multiverso Studio.",
+    socials: {
+      twitch: "https://www.twitch.tv/coffe_sugar_boy",
+    },
+  },
+  Christian: {
+    name: "Christian",
+    role: "CEO of Multiverso Studio.",
+    group: "Multiverso Studios",
+    image: "By2008.jpg",
+    bio: "Fundador y CEO de Multiverso Studios. Christian es un desarrollador y creador de contenido que ha liderado el estudio desde su inicio, aportando su visión y experiencia en la industria del entretenimiento digital.",
+    socials: {
+      instagram: "https://www.instagram.com/christian.by08",
+      x: "https://x.com/christian_by08",
+      youtube: "https://www.youtube.com/@Christian_by08",
+      kick: "https://kick.com/christianby08",
+      Whatsapp: "https://www.whatsapp.com/channel/0029VaPjTxL2phHGdO1hd62y",
+    },    
+  },
+  nikki: {
+    name: "Nikki",
+    role: "Actriz de doblaje, Moderadora y Betatester",
+    group: "Multiverso Studios",
+    image: "Nikki.jpg",
+    bio: "Nikki es una actriz de doblaje que ha prestado su voz para la franquisia de Multiversal Games. Tambien a sido moderadora y betatester de varios proyectos del estudio, aportando su experiencia y habilidades en la industria del entretenimiento digital.",
+    socials: {
+      instagram: "https://www.instagram.com/nnsoortk/",
+      x: "https://x.com/nikkiangg",
+      tiktok: "https://www.tiktok.com/@ang.nkl",
+    },
+  },
+  limunsimon: {
+    name: "LimunSimon",
+    role: "Betatester y moderador",
+    group: "Multiverso Studios",
+    image: "LimunSimon.jpg",
+    bio: "Simon es un betatester y moderador que ha participado en varios proyectos de Multiverso Studios, aportando su experiencia y habilidades en la industria del entretenimiento digital.",
+    socials: {
+      instagram: "https://www.instagram.com/syk0boyfrom_nowhere/",
+      x: "",
+      twitch: "",
+    },
+  },
+  calebmc: {
+    name: "CalebMC",
+    role: "Betatester",
+    group: "Multiverso Studios",
+    image: "CalebMC.jpg",
+    bio: "Caleb es un betatester que ha participado en varios proyectos de Multiverso Studios, aportando su experiencia y habilidades en la industria del entretenimiento digital.",
+    socials: {
+      instagram: "https://www.instagram.com/_andeeer_0/",
+      x: "",
+      youtube: "",
+    },
+  },
+  miku: {
+    name: "Miku",
+    role: "Builder",
+    group: "Darkness Animation",
+    image: "IncognitoH.png",
+    bio: "Miku es un builder que ha participado en varios proyectos de Multiverso Studios, es un hombre de pocas palabras pero con gran talento, aportando su experiencia y habilidades en la industria del entretenimiento digital.",
+    socials: {
+      instagram: "",
+      x: "",
+    },
+  },
+  faris: {
+    name: "Faris",
+    role: "Builder",
+    group: "Darkness Animation",
+    image: "IncognitoM.png",
+    bio: "Faris es un builder que ha participado en varios proyectos de Multiverso Studios, una mujer perfeccionista con lo que hace y con gran talento, aportando su experiencia y habilidades en la industria del entretenimiento digital.",
+    socials: {
+      instagram: "",
+      x: "",
+    },
+  },
+  barb: {
+    name: "Barb",
+    role: "Builder y moderadora",
+    group: "Darkness Animation",
+    image: "IncognitoM.png",
+    bio: "Barb es una builder y moderadora que ha participado en varios proyectos de Multiverso Studios, aportando su experiencia y habilidades en la industria del entretenimiento digital.",
+    socials: {
+      instagram: "",
+      x: "",
+    },
+  },
+  morrocoy: {
+    name: "Morrocoy Studios",
+    role: "Desarrollo de juegos",
+    group: "Colaboraciones",
+    image: "MorrocoyStudios.png",
+    bio: "Estudio de desarrollo de juegos que ha colaborado con Multiverso Studios en Multiversal Games 5, aportando en diseño grafico e invitaciones para el evento.",
+    socials: {
+      instagram: "",
+      x: "",
+      website: "",
+    },
+  },
+  PixelBlits: {
+    name: "PixelBlits",
+    role: "Colaborador",
+    group: "Colaboraciones",
+    image: "PixelBlits.png",
+    bio: "Ceo de Deluxe Studios (Estudio que ya no existe) y colaborador temporal de Multiverso Studios en un proyecto (Simon Dice), aportando en desarrollo de juegos.",
+    socials: {
+      instagram: "",
+      x: "",
+      website: "",
+    },
+  },
+  notleox: {
+    name: "NotLeox",
+    role: "Programación",
+    group: "Multiverso Studios",
+    image: "NotLeox.png",
+    bio: "Leo fue un programador de Multiverso Studios que colaboró en KSMP 2.",
+    socials: {
+      instagram: "",
+      x: "",
+      youtube: "",
+    },
+  },
+  reorline: {
+    name: "Reorline",
+    role: "Diseño y colaboración",
+    group: "Colaboraciones",
+    image: "ReorLine.png",
+    bio: "Reorline fue Diseñador para Multiverso Studios para Multiversal Games, despues de un tiempo hizo una colaboaracion para un evento suyo y para su espectadores, creado asi Viernes Terrorífico, un evento original de Multiverso Studios.",
+    socials: {
+      instagram: "https://www.instagram.com/reorline/",
+      x: "https://x.com/reorline",
+      youtube: "https://www.youtube.com/@Reorline",
+      twitch: "https://www.twitch.tv/reorline",
+    },
+  },
+  marshall: {
+    name: "Marshall Panda",
+    role: "Programación",
+    group: "Colaboraciones",
+    image: "MarshallPanda.png",
+    bio: "Marshall Panda fue un programador que colaboró con Multiverso Studios mucho antes de su fundación. Fue desarrolador en la 1ra y 2da edicion de Multiversal Games.",
+    socials: {
+      instagram: "",
+      x: "",
+      github: "",
+    },
+  },
+  Error505: {
+    name: "Error505",
+    role: "Desconocido",
+    group: "Desconocido",
+    image: "logo.png",
+    bio: "Informacion Desconocida.",
+    socials: {
+      instagram: "",
+      x: "",
+      tiktok: "",
+    },
+  },
+  megan: {
+    name: "Megan",
+    role: "Actriz de doblaje",
+    group: "Multiverso Studios",
+    image: "IncognitoM.png",
+    bio: "Megan fue una actriz de doblaje para Multiverso Studios que colaboró en Hard Craft y en Multiversal Games.",
+    socials: {
+      instagram: "",
+      x: "",
+      tiktok: "",
+    },
+  },
+};
+
+const collaboratorDetail = document.querySelector("#collaborator-detail");
+
+if (collaboratorDetail) {
+  const collaboratorId =
+    new URLSearchParams(location.search).get("id") || "extrayp";
+  const collaborator = collaborators[collaboratorId] || collaborators.extrayp;
+
+  const socialNames = {
+    instagram: "Instagram",
+    x: "X",
+    youtube: "YouTube",
+    twitch: "Twitch",
+    tiktok: "TikTok",
+    discord: "Discord",
+    github: "GitHub",
+    website: "Sitio web",
+  };
+
+  const socialIcons = {
+    instagram: "📸",
+    x: "𝕏",
+    youtube: "▶",
+    twitch: "🎮",
+    tiktok: "♪",
+    discord: "DC",
+    github: "⌘",
+    website: "↗",
+    kick: "K",
+    Whatsapp: "WP",
+  };
+
+  const activeSocials = Object.entries(collaborator.socials)
+    .filter(([, url]) => url && url.trim() !== "")
+    .map(
+      ([network, url]) => `
+        <a
+          class="profile-social"
+          href="${url}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="${socialNames[network] || network}"
+          title="${socialNames[network] || network}"
+        >
+          ${socialIcons[network] || "↗"}
+        </a>
+      `,
+    )
+    .join("");
+
+  document.title = collaborator.name + " — Multiverso Studios";
+
+  collaboratorDetail.innerHTML = `
+    <a class="back collaborator-back" href="colaboraciones.html">
+      ← Todos los colaboradores
+    </a>
+
+    <div class="profile-layout">
+      <div class="profile-media">
+        <img
+          src="imagenes/${collaborator.image}"
+          alt="${collaborator.name}"
+        />
+
+        <div class="profile-socials">
+          ${activeSocials}
+        </div>
+      </div>
+
+      <div class="profile-copy">
+        <p class="kicker">${collaborator.group}</p>
+        <h1>${collaborator.name}</h1>
+        <p class="profile-role">${collaborator.role}</p>
+        <p class="profile-bio">${collaborator.bio}</p>
+      </div>
     </div>
   `;
 }
